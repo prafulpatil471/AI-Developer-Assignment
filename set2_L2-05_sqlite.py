@@ -1,6 +1,5 @@
 import sqlite3
 
-# Connect to SQLite (creates set2_L2-05.db if not exists)
 conn = sqlite3.connect("set2_L2-05.db")
 cursor = conn.cursor()
 
