@@ -15,8 +15,7 @@ def analyze_chat_logs(log_file="chat_logs.txt"):
     tokens = []
 
     for line in logs:
-        # Example line:
-        # 2026-09-19 22:20:00 | INFO | PROMPT: Hello | RESPONSE: Summary... | LATENCY: 0.01s | TOKENS: 5
+        
         if "LATENCY:" in line and "TOKENS:" in line:
             try:
                 latency_match = re.search(r"LATENCY:\s*([\d\.]+)", line)
@@ -41,7 +40,6 @@ def analyze_sqlite(db_file="set2_L2-05.db"):
         conn = sqlite3.connect(db_file)
         cursor = conn.cursor()
 
-        
         cursor.execute("SELECT COUNT(*) FROM patients;")
         count = cursor.fetchone()[0]
 
@@ -55,3 +53,4 @@ def analyze_sqlite(db_file="set2_L2-05.db"):
 if __name__ == "__main__":
     analyze_chat_logs()
     analyze_sqlite()
+
