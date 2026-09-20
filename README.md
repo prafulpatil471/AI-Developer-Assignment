@@ -10,7 +10,7 @@ Files: `set1_L1-05chatbot.py`, `logger.py`, `chat_logs.txt`
 - Logs are stored in `chat_logs.txt`.
 
 Run in PowerShell:
-powershell - python set1_L1-05chatbot.py
+python set1_L1-05chatbot.py
 
 -------------------------------
 set2-python set2_L2-05_sqlite.py
