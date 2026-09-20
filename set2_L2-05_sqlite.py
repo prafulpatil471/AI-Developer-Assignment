@@ -4,7 +4,6 @@ import sqlite3
 conn = sqlite3.connect("set2_L2-05.db")
 cursor = conn.cursor()
 
-# Create tables
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS TableA (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -29,7 +28,6 @@ CREATE TABLE IF NOT EXISTS TableC (
 )
 """)
 
-# Insert sample data only if empty
 if cursor.execute("SELECT COUNT(*) FROM TableA").fetchone()[0] == 0:
     cursor.execute("INSERT INTO TableA (name, info) VALUES ('Sample A', 'Info A')")
 
@@ -41,7 +39,6 @@ if cursor.execute("SELECT COUNT(*) FROM TableC").fetchone()[0] == 0:
 
 conn.commit()
 
-# Query examples
 print("All TableA rows:")
 for row in cursor.execute("SELECT * FROM TableA"):
     print(row)
@@ -56,5 +53,3 @@ for row in cursor.execute("SELECT * FROM TableC"):
 
 conn.close()
 
-
-#--python set2_L2-05_sqlite.py
